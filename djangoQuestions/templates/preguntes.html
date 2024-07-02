@@ -1,0 +1,20 @@
+<form action="{% url 'resultats' %}" method="GET">  <label for="nom"><b>El teu nom:   </b></label><input type="text" id="" name="nom"><br>
+respon les següents preguntes
+         
+   {% for q in QuestionsAndChoices %}
+      
+    <p> {{ q.Question.text }}</p>
+        {% for key, text in q.Choices.items %}
+           
+           
+          <input type="radio" id="" name="{{q.Question.id}}" value="{{ key }}">
+         <label for="html"><b>{{ key }}</b>){{ text }} </label><br>
+          
+
+     {% endfor %}
+       {% endfor %}
+<input type="submit" value="Submit">
+</form>
+
+
+
